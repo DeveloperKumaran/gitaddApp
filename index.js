@@ -1,9 +1,18 @@
-var listItems = document.getElementsByClassName('list-group');
+var listItems = document.querySelectorAll('ul');
 listItems[1].style.background='green';
-listItems.style.fontWeight='bold';
 listItems[2].style.display = "hidden";
 
-var listNew = document.getElementsByTagName('ul');
-var newList = listNew[4]
+var odd = document.querySelectorAll('li:nth-child(odd)');
+
+for(var i=0; i<odd.length;i++){
+    odd[i].style.background = "green";
+}
+
+
+
+
+
+
+
 
 
