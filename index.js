@@ -11,7 +11,7 @@ for(var i=0; i<odd.length;i++){
 
 
 
-var newDiv = document.getElementById('#header-title');
+var newDiv = document.getElementById('header-title');
 
 var newDivText = document.createTextNode('Hello ');
 
@@ -70,12 +70,17 @@ function removeItem(e){
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
       itemList.removeChild(li);
+      
     }
   }
 }
 
 
-var editbtn = document.createElement('button').appendChild(document.createTextNode('EDIT'));
+var editbtn = document.createElement('button');
+
+
+editbtn.className = 'btn btn-danger btn-sm float-right delete';
+
 
 listItems.forEach(list => {
     list.appendChild(editbtn);
@@ -85,3 +90,6 @@ listItems.forEach(list => {
 
 
 
+
+
+console.log("not working");
