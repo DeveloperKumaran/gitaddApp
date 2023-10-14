@@ -10,14 +10,14 @@ for(var i=0; i<odd.length;i++){
 */
 
 
-/*
+
 var newDiv = document.getElementById('#header-title');
 
 var newDivText = document.createTextNode('Hello ');
 
 newDiv.appendChild(newDivText);
 
-*/
+
 
 var listItems = document.getElementById('#items');
 
