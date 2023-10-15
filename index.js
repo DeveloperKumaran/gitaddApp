@@ -1,8 +1,8 @@
 
 console.log('working');
 
-const nameValue = document.getElementById('fullName');
-const mailValue = document.getElementById('E-mail');
+let nameValue = document.getElementById('fullName');
+let mailValue = document.getElementById('E-mail');
 
 
 let deleteBtn;
@@ -21,8 +21,8 @@ document.getElementById('Form').addEventListener('submit',(e)=>{
     
   e.preventDefault();
   
-const fullname = nameValue.value;
-const mail = mailValue.value;
+let fullname = nameValue.value;
+let mail = mailValue.value;
   /*localStorage.setItem('FullName',fullname);
   localStorage.setItem('mail',mail);*/
 
@@ -56,11 +56,30 @@ const mail = mailValue.value;
 
     list.appendChild(deleteBtn);
 
+
+
+
+    editBtn = document.createElement('button');
+
+    editBtn.classList = 'edit-btn';
+    editBtn.id = 'edit';
+
+    editBtn.innerText = 'Edit';
+
+    list.appendChild(editBtn);
+
     ulist.appendChild(list)
 
     document.body.appendChild(ulist);
  
   console.log(list);
+
+  editBtn.addEventListener('click',(e)=>{
+    
+    document.getElementById('fullName').value = fullname;
+
+    list.remove();
+  })
 
   deleteBtn.addEventListener('click', (e)=>{
     list.remove();
