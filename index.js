@@ -1,95 +1,20 @@
 
-/*listItems[1].style.background='green';
-listItems[2].style.display = "hidden";
+console.log('working');
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-
-for(var i=0; i<odd.length;i++){
-    odd[i].style.background = "green";
-}
-*/
+const nameValue = document.getElementById('fullName');
+const mailValue = document.getElementById('E-mail');
 
 
 
-var newDiv = document.getElementById('header-title');
-
-var newDivText = document.createTextNode('Hello ');
-
-newDiv.appendChild(newDivText);
-
-
-
-var listItems = document.getElementById('#items');
-
-
-
-var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
-var filter = document.getElementById('filter');
-
-
-form.addEventListener('submit', addItem);
-
-itemList.addEventListener('click', removeItem);
-
-filter.addEventListener('keyup', filterItems);
-
-
-function addItem(e){
+document.getElementById('Form').addEventListener('submit',(e)=>{
+    
   e.preventDefault();
-
   
-  var newItem = document.getElementById('item').value;
-
-  
-  var li = document.createElement('li');
-  
-  li.className = 'list-group-item';
-  
-  li.appendChild(document.createTextNode(newItem));
-
-  
-  var deleteBtn = document.createElement('button');
-
-  
-  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
-
-  
-  deleteBtn.appendChild(document.createTextNode('X'));
-
-  
-  li.appendChild(deleteBtn);
-
-  
-  itemList.appendChild(li);
-}
-
-
-function removeItem(e){
-  if(e.target.classList.contains('delete')){
-    if(confirm('Are You Sure?')){
-      var li = e.target.parentElement;
-      itemList.removeChild(li);
-      
-    }
-  }
-}
-
-
-var editbtn = document.createElement('button');
-
-
-editbtn.className = 'btn btn-danger btn-sm float-right delete';
-
-
-listItems.forEach(list => {
-    list.appendChild(editbtn);
+const fullname = nameValue.value;
+const mail = mailValue.value;
+  localStorage.setItem('FullName',fullname);
+  localStorage.setItem('mail',mail);
+ 
+  console.log('submitted');
 });
 
-
-
-
-
-
-
-console.log("not working");
