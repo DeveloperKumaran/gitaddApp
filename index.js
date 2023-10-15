@@ -29,7 +29,8 @@ const mail = mailValue.value;
 
   localStorage.setItem('userdetails',userString);
 
-
+    fullname = '';
+    mail = '';
  
   console.log('submitted');
 });
